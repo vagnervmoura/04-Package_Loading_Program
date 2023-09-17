@@ -36,6 +36,7 @@ while n_itens_to_ship > n_item:
                 n_item += 1
                 list_n_package.append(["N_Package:", n_package, "Package Kilo:", package, "N_Item:", n_item, "Item Kilo:", item_w])
                 package_kg_total = package_kg_total + item_w
+                print(*list_n_package, sep = "\n")
             elif n_itens_to_ship > n_item:
                 print("Package {}, its in the maximun load. Cannot add this item with {}kg to this package, sending this Item to the next Package.".format(n_package, item_w))
                 if package < 20 and package < non_optimal_package:
@@ -48,6 +49,7 @@ while n_itens_to_ship > n_item:
                 n_item += 1
                 package = package + item_w
                 list_n_package.append(["N_Package:", n_package, "Package Kilo:", package, "N_Item:", n_item, "Item Kilo:", item_w])
+                print(*list_n_package, sep = "\n")
                 package_kg_total = package_kg_total + item_w 
         elif item_w > max:
             print("Item to heavier than 10kg, please remove: {}kg from your Item.".format(item_w - 10))
